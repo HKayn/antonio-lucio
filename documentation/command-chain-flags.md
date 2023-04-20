@@ -10,7 +10,7 @@ You can set up Command Chain Flags for specific features by following the steps 
 
 ## Precedence Rules
 
-It is currently possible to have flags set that enable and disable the same feature at the same time. Additionally, each feature has a default state according to what I think is the best default experience for Vivaldi VH.
+It is currently possible to have flags set that enable and disable the same feature at the same time. Additionally, each feature has a default state according to what I think is the best default experience for Antonio Lucio.
 
 For each flag, the following precedence rules apply:
 
