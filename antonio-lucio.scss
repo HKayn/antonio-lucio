@@ -1,0 +1,23 @@
+/*
+  Antonio Lucio
+  Version: 1.0.0
+  Target Vivaldi Browser versions: 6.0
+
+  Antonio Lucio is a CSS modification for Vivaldi Browser that likens its appearance to the to the web browser of that one company with a fruit in their logo.
+
+  Copyright (c) 2023 HKayn <https://hkayn.com>
+*/
+
+@use "styles";
+@use "utilities";
+
+:root:has(#{utilities.$select-browser-with-valid-settings}) {
+  @include styles.layout-styles;
+
+  @include utilities.mixin-bind-command-chain-flag(
+    "tabbar-full-width",
+    true
+  ) {
+    @include styles.tab-bar-styles;
+  }
+}

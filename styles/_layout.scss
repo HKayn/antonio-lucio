@@ -1,0 +1,224 @@
+@mixin styles {
+  #header {
+    z-index: 1;
+    background-color: var(--colorAccentBg);
+  }
+
+  .vivaldi,
+  .window-buttongroup {
+    transform: scale(var(--uiZoomLevel));
+  }
+
+  .vivaldi {
+    transform-origin: top left;
+  }
+
+  .window-buttongroup {
+    transform-origin: top right;
+  }
+
+  #tabs-tabbar-container {
+    position: relative;
+    top: 31px;
+    background-color: var(--colorAccentBgDark);
+  }
+
+  #tabs-container:not(.none).top {
+    padding: 0 !important; // override OS specific padding
+  }
+
+  #tabs-subcontainer {
+    background-color: var(--colorAccentBgDarker);
+  }
+
+  .mainbar {
+    height: 31px;
+    background-color: var(--colorAccentBgDark);
+  }
+
+  .toolbar-mainbar.toolbar-visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--colorAccentBg);
+    border: none;
+    color: var(--colorAccentFg);
+
+    .UrlBar-AddressField {
+      background-color: var(--colorAccentBgDark);
+      border-color: transparent;
+      color: var(--colorAccentFg);
+
+      &:not(:has(#urlFieldInput:focus)) {
+        &::before {
+          content: " ";
+          order: 2;
+          flex: 1;
+          pointer-events: none;
+          display: inline-block;
+          min-width: 192px;
+        }
+
+        > * {
+          z-index: 1;
+        }
+
+        > :has(~ .UrlBar-UrlFieldWrapper) {
+          order: 1;
+        }
+
+        .UrlBar-UrlFieldWrapper {
+          position: absolute;
+          inset: -2px 0 0 0;
+
+          .UrlField--IsEmpty, .UrlField--HasEditText {
+            #urlFieldInput {
+              text-align: center;
+            }
+          }
+
+          ~ * {
+            order: 3;
+          }
+        }
+      }
+
+      .SiteInfoButton.secure,
+      .SiteInfoButton.certified {
+        fill: var(--colorAccentFg);
+
+        path {
+          fill: var(--colorAccentFg);
+        }
+      }
+
+      .UrlFragment-Wrapper {
+        --HighlightColor: var(--colorAccentFg);
+        --LowlightColor: var(--colorAccentFgFaded);
+
+        width: 100%;
+        padding: 6px;
+        justify-content: center;
+
+        .UrlFragment-Link:not(:first-child),
+        .UrlFragment-HostFragment-Subdomain,
+        .UrlFragment--Lowlight {
+          display: none;
+        }
+      }
+
+      .UrlBar-UrlObfuscationWarning path {
+        fill: var(--colorAccentFg);
+      }
+
+      .pageload {
+        color: var(--colorAccentFg);
+      }
+    }
+
+    .UrlBar-SearchField {
+      background-color: var(--colorAccentBgDark);
+      border-color: transparent;
+      color: var(--colorAccentFg);
+    }
+
+    .button-toolbar {
+      &.ExtensionIcon--Hidden {
+        background-color: var(--colorAccentBgDark);
+
+        &:hover {
+          background-color: var(--colorAccentBgDarker);
+        }
+      }
+
+      > button {
+        &:hover {
+          background-color: var(--colorAccentBgDark);
+        }
+
+        &.button-pressed {
+          background-image: linear-gradient(
+            var(--colorAccentBgDarker),
+            var(--colorAccentBgDark)
+          );
+        }
+      }
+    }
+  }
+
+  #tabs-tabbar-container.top {
+    margin-top: 8px;
+    padding-top: 2px;
+  }
+
+  #browser {
+    &:not(.maximized) {
+      .toolbar-mainbar.toolbar-visible {
+        height: 39px;
+      }
+    }
+
+    &.maximized {
+      #titlebar > * {
+        height: 39px;
+      }
+
+      .toolbar-mainbar.toolbar-visible {
+        height: 39px;
+      }
+    }
+
+    &.stacks-dotted {
+      #tabs-tabbar-container.top {
+        padding-top: 6px;
+      }
+    }
+
+    &.win {
+      &.maximized .window-buttongroup > * {
+        height: 100%;
+      }
+
+      .toolbar-mainbar.toolbar-visible {
+        // address bar margins are derived from #tabs-container padding
+        margin-left: 34px; //calc(34px / var(--uiZoomLevel));
+        margin-right: 140px; //calc(140px / var(--uiZoomLevel));
+      }
+    }
+
+    &.mac {
+      .toolbar-mainbar.toolbar-visible {
+        // address bar margins are derived from #tabs-container padding
+        margin-left: 78px; //calc(78px / var(--uiZoomLevel));
+        margin-right: 78px; //calc(78px / var(--uiZoomLevel));
+      }
+
+      .window-buttongroup {
+        transform-origin: top left;
+        height: 38px;
+        margin: 0;
+        padding-left: 13px; //calc(13px / var(--uiZoomLevel));
+        width: 78px; //calc(78px / var(--uiZoomLevel));
+        background-color: var(--colorAccentBg);
+        align-items: center;
+      }
+    }
+
+    &.linux {
+      &.normal #tabs-tabbar-container.top {
+        margin-top: 9px;
+      }
+
+      .window-buttongroup {
+        top: 10px; //calc(10px / var(--uiZoomLevel));
+      }
+
+      .toolbar-mainbar.toolbar-visible {
+        // address bar margins are derived from #tabs-container padding
+        margin-left: 34px; //calc(34px / var(--uiZoomLevel));
+        margin-right: 90px; //calc(90px / var(--uiZoomLevel));
+      }
+    }
+  }
+}

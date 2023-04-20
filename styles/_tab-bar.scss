@@ -1,0 +1,77 @@
+@mixin styles {
+  .tab-strip {
+    display: flex;
+    margin-right: 116px; // width of .sync-and-trash-container + the regular 60px margin
+
+    > span {
+      display: block;
+      flex: 1;
+      position: relative;
+
+      &:has(> .tab-position > .tab.active) {
+        min-width: 30px;
+      }
+
+      > .tab-position {
+        transform: unset;
+        width: unset;
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        .title {
+          margin-right: 21px;
+          text-align: center;
+          display: inline;
+          vertical-align: bottom;
+          margin-top: 3px;
+        }
+      }
+    }
+
+    > :has(.newtab) {
+      position: absolute;
+      left: 100%;
+
+      .newtab {
+        left: 0 !important; // override inline styling
+      }
+    }
+
+    .svg-tab-stack {
+      width: 100% !important; // override inline styling
+    }
+
+    .tab {
+      .stack-counter {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .tab-position.accordion-toggle-arrow {
+      position: static;
+      transform: none;
+    }
+  }
+
+  .toolbar-tabbar {
+    position: absolute;
+    right: 0;
+  }
+
+  #browser {
+    &:not(.alt-tabs) {
+      .tab {
+        &.force-hover .stack-counter {
+          right: 24px;
+        }
+
+        .close {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use "selectors";
+
+@mixin highlight-toolbar-component-in-toolbar-editor($selector) {
+  #browser.toolbar-edit-mode #{$selector} {
+    opacity: 0.5;
+
+    > button::before {
+      content: " ";
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      border: 1px dashed;
+      border-radius: var(--radius);
+    }
+  }
+}
+
+$-command-chain-flag-namespace: "al-";
+$-command-chain-flag-prefix-enable: "#{$-command-chain-flag-namespace}enable-";
+$-command-chain-flag-prefix-disable: "#{$-command-chain-flag-namespace}disable-";
+
+@mixin bind-command-chain-flag($flag, $enabled-by-default: false) {
+  @if $enabled-by-default {
+    @include does-not-exist(#{$-command-chain-flag-prefix-disable}#{$flag}) {
+      @content;
+    }
+  } @else {
+    @include exists(#{$-command-chain-flag-prefix-enable}#{$flag}) {
+      @include does-not-exist(#{$-command-chain-flag-prefix-disable}#{$flag}) {
+        @content;
+      }
+    }
+  }
+
+  @at-root {
+    #browser:not(.toolbar-edit-mode)
+      #{selectors.$command-chain-toolbar-component}:has(
+        button[title="#{$-command-chain-flag-prefix-enable}#{$flag}"],
+        button[title="#{$-command-chain-flag-prefix-disable}#{$flag}"]
+      ) {
+      display: none;
+    }
+
+    @include highlight-toolbar-component-in-toolbar-editor(
+      '#{selectors.$command-chain-toolbar-component}:has(button[title="#{$-command-chain-flag-prefix-enable}#{$flag}"], button[title="#{$-command-chain-flag-prefix-disable}#{$flag}"])'
+    );
+  }
+}
+
+@mixin exists($full-flag) {
+  > :has(:is(#{selectors.$editable-toolbars}) button[title="#{$full-flag}"]) {
+    @content;
+  }
+}
+
+@mixin does-not-exist($full-flag) {
+  > :not(
+      :has(:is(#{selectors.$editable-toolbars}) button[title="#{$full-flag}"])
+    ) {
+    @content;
+  }
+}
