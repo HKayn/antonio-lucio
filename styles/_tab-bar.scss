@@ -40,6 +40,7 @@
 
     .svg-tab-stack {
       width: 100% !important; // override inline styling
+      height: calc(100% + 1px);
     }
 
     .tab {
