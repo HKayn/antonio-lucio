@@ -1,7 +1,7 @@
 // This file contains selectors that can be reused and/or are in need of semantic meaning.
 
 // Settings check intended to act as a failsafe
-$browser-with-valid-settings: "#browser.color-behind-tabs-on.tabs-top.address-top:not(.transparent-tabbar):not(.is-settingspage)";
+$browser-with-valid-settings: "#browser.color-behind-tabs-on.tabs-top.address-top:not(.transparent-tabbar, .is-settingspage, .fullscreen)";
 
 // Grid items
 $title-bar: "#titlebar";
