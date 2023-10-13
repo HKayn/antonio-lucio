@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.0.4 (2023-10-14)
+
+### Fixes
+
+- Fixed several text elements not being correctly aligned.
+- Fixed position of "Synced Tabs" and "Show Closed Tabs" buttons.
+
+---
+
 ## v1.0.3 (2023-04-23)
 
 ### Fixes
