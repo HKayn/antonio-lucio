@@ -71,6 +71,9 @@
         .UrlBar-UrlFieldWrapper {
           position: absolute;
           inset: -2px 0 0 0;
+          height: min-content;
+          margin-top: auto;
+          margin-bottom: auto;
 
           .UrlField--IsEmpty, .UrlField--HasEditText {
             #urlFieldInput {
