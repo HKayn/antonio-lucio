@@ -24,7 +24,7 @@ For each flag, the following precedence rules apply:
 
 *Enabled by default.*
 
-`ac-enable-tabbar-full-width`
+`ac-enable-tabbar-full-width` \
 `ac-disable-tabbar-full-width`
 
 Individual tabs grow in width to occupy free space in their tab row.
@@ -33,7 +33,7 @@ Individual tabs grow in width to occupy free space in their tab row.
 
 *Enabled by default.*
 
-`ac-enable-addressfield-show-only-domain-name`
+`ac-enable-addressfield-show-only-domain-name` \
 `ac-disable-addressfield-show-only-domain-name`
 
 The address field only shows the domain name of an URL when it is not in focus.
