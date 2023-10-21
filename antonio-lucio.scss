@@ -29,9 +29,9 @@
   }
   
   @include utilities.mixin-bind-command-chain-flag(
-    "bookmark-bar-center-display",
+    "bookmarkbar-center-display",
     true
   ) {
-    @include styles.layout-bookmark-bar-center-display;
+    @include styles.layout-bookmarkbar-center-display;
   }
 }
