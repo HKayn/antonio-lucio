@@ -248,8 +248,10 @@
         border-color: var(--colorAccentFgAlpha);
       }
 
-      .folder-icon {
-        fill: var(--colorAccentFgFaded);
+      button {
+        img, svg {
+          fill: var(--colorAccentFgFaded);
+        }
       }
     }
 
