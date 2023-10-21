@@ -1,3 +1,5 @@
+@use "../utilities";
+
 @mixin styles {
   #header {
     z-index: 1;
@@ -75,7 +77,8 @@
           margin-top: auto;
           margin-bottom: auto;
 
-          .UrlField--IsEmpty, .UrlField--HasEditText {
+          .UrlField--IsEmpty,
+          .UrlField--HasEditText {
             #urlFieldInput {
               text-align: center;
             }
@@ -216,6 +219,42 @@
         margin-left: 34px; //calc(34px / var(--uiZoomLevel));
         margin-right: 90px; //calc(90px / var(--uiZoomLevel));
       }
+    }
+  }
+}
+
+@mixin bookmark-bar-over-tab-bar {
+  #browser.bookmark-bar-top {
+    #tabs-tabbar-container {
+      top: calc(
+        utilities.$value-of-address-bar-height + utilities.$value-of-bookmark-bar-height
+      );
+    }
+
+    .bookmark-bar {
+      position: fixed;
+      top: utilities.$value-of-address-bar-height;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      border: none;
+
+      * {
+        background-color: var(--colorAccentBg) !important;
+        color: var(--colorAccentFg);
+      }
+
+      .separator {
+        border-color: var(--colorAccentFgAlpha);
+      }
+
+      .folder-icon {
+        fill: var(--colorAccentFgFaded);
+      }
+    }
+
+    .inner {
+      margin-top: utilities.$value-of-bookmark-bar-height; // accounts for the bookmark bar being taken out of the document flow
     }
   }
 }

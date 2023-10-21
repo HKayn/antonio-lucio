@@ -20,4 +20,11 @@
   ) {
     @include styles.tab-bar-styles;
   }
+
+  @include utilities.mixin-bind-command-chain-flag(
+    "bookmark-bar-over-tab-bar",
+    true
+  ) {
+    @include styles.layout-bookmark-bar-over-tab-bar;
+  }
 }
