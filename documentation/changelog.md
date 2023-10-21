@@ -19,6 +19,13 @@
 - Tab titles are now horizontally centered inside their tab once again.
 - The stack counter is now vertically centered inside the tab.
 
+### Known Issues
+
+- When "Menu Position" is set to "Horizontal", the horizontal menu will be covered by the address bar.
+- When "Use Native Window" is enabled, the address bar will still leave a gap for nonexistent window buttons.
+
+---
+
 ## v1.0.4 (2023-10-14)
 
 ### Fixes
