@@ -182,7 +182,7 @@
 
       .toolbar-mainbar.toolbar-visible {
         // address bar margins are derived from #tabs-container padding
-        margin-left: 34px; //calc(34px / var(--uiZoomLevel));
+        margin-left: var(--menuWidth); //calc(var(--menuWidth) / var(--uiZoomLevel));
         margin-right: 140px; //calc(140px / var(--uiZoomLevel));
       }
     }
@@ -216,7 +216,7 @@
 
       .toolbar-mainbar.toolbar-visible {
         // address bar margins are derived from #tabs-container padding
-        margin-left: 34px; //calc(34px / var(--uiZoomLevel));
+        margin-left: var(--menuWidth); //calc(var(--menuWidth) / var(--uiZoomLevel));
         margin-right: 90px; //calc(90px / var(--uiZoomLevel));
       }
     }
