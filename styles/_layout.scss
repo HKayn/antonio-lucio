@@ -257,6 +257,10 @@
 
     .inner {
       margin-top: 28px; // TODO: decipher this magic number
+
+      #panels-container {
+        margin-top: 1px; // aligns top edge of panel with that of webpage
+      }
     }
   }
 }
