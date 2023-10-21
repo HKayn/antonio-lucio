@@ -258,3 +258,16 @@
     }
   }
 }
+
+@mixin center-bookmark-bar {
+  #browser {
+    .bookmark-bar .observer {
+      justify-content: center;
+
+      .chevron {
+        position: absolute;
+        inset: 0 0 0 auto;
+      }
+    }
+  }
+}

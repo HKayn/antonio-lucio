@@ -27,4 +27,11 @@
   ) {
     @include styles.layout-bookmark-bar-over-tab-bar;
   }
+  
+  @include utilities.mixin-bind-command-chain-flag(
+    "center-bookmark-bar",
+    true
+  ) {
+    @include styles.layout-center-bookmark-bar;
+  }
 }
