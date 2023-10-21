@@ -12,3 +12,5 @@ The following will be added to Antonio Lucio in the future, in no particular ord
 ## Known Issues
 
 - When "Tab Stacking" is set to "Accordion", the border of a tab stack will not correctly enclose all tabs of a stack when expanded.
+- When "Menu Position" is set to "Horizontal", the horizontal menu will be covered by the address bar.
+- When "Use Native Window" is enabled, the address bar will still leave a gap for nonexistent window buttons.
