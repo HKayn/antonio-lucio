@@ -254,7 +254,7 @@
     }
 
     .inner {
-      margin-top: utilities.$value-of-bookmark-bar-height; // accounts for the bookmark bar being taken out of the document flow
+      margin-top: 28px; // TODO: decipher this magic number
     }
   }
 }
