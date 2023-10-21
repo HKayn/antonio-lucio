@@ -8,16 +8,6 @@ You can set up Command Chain Flags for specific features by following the steps 
 2. Give this command chain a name that matches the flag you would like to apply, for example `al-disable-tabbar-full-width`.
 3. [Open the Toolbar Editor](https://help.vivaldi.com/desktop/appearance-customization/edit-toolbars/#Customize_toolbars) and select "Command Chains" from the dropdown. Grab your created Command Chain and drag it into one of your toolbars.
 
-## Precedence Rules
-
-It is currently possible to have flags set that enable and disable the same feature at the same time. Additionally, each feature has a default state according to what I think is the best default experience for Antonio Lucio.
-
-For each flag, the following precedence rules apply:
-
-1. The `disable` flag always disables a feature.
-2. The `enable` flag enables a feature if the `disable` flag is not set.
-3. The default state of a feature applies if neither flag is set.
-
 ## Available Flags
 
 ### Grow width of tabs to occupy free space
@@ -28,6 +18,22 @@ To disable: `al-disable-tabbar-full-width`
 
 Individual tabs grow in width to occupy free space in their tab row.
 
+### Move bookmark bar over tab bar
+
+*Enabled by default.*
+
+To disable: `al-disable-bookmarkbar-over-tabbar`
+
+The bookmark bar is moved between the address bar and tab bar, and is also colored appropriately.
+
+### Center bookmark bar
+
+*Enabled by default.*
+
+To disable: `al-disable-bookmarkbar-center-display`
+
+Items inside the bookmark bar are centered.
+
 ### *(Coming soon!)* Show only domain name of URLs in address field
 
 *Enabled by default.*
@@ -35,3 +41,13 @@ Individual tabs grow in width to occupy free space in their tab row.
 To disable: `al-disable-addressfield-show-only-domain-name`
 
 The address field only shows the domain name of an URL when it is not in focus.
+
+## Precedence Rules
+
+It is currently possible to have flags set that enable and disable the same feature at the same time. Additionally, each feature has a default state according to what I think is the best default experience for Antonio Lucio.
+
+For each flag, the following precedence rules apply:
+
+1. The `disable` flag always disables a feature.
+2. The `enable` flag enables a feature if the `disable` flag is not set.
+3. The default state of a feature applies if neither flag is set.

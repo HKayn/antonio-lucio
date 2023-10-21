@@ -4,7 +4,7 @@
 
 Antonio Lucio is a CSS modification for [Vivaldi Browser](https://vivaldi.com) that likens its appearance to the web browser of that one company with a fruit in their logo.
 
-## Usage Notes
+## Requirements
 
 Antonio Lucio will only be applied when all of the following are true:
 

@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.1.0 (2023-10-21)
+
+### Changes
+
+- The bookmark bar is now positioned between the address bar and the tab bar by default. Thanks [tojaroslaw](https://github.com/tojaroslaw) for suggesting this!
+- The Command Chain Flag `al-disable-bookmarkbar-over-tabbar` is now available to revert this bookmark bar placement.
+- Items inside the bookmark bar are now centered.
+  - *This change is inspired by the centered position of the favorites bar in Safari.*
+- The Command Chain Flag `al-disable-bookmarkbar-center-display` is now available to revert this behavior.
+- Documentation has been updated and simplified.
+- The demo image has been updated.
+
+### Fixes
+
+- The menu button is no longer partially covered; changes to the menu button width are now taken into account.
+- When the window is not maximized, the menu button will no longer be vertically misplaced.
+- Tab titles are now horizontally centered inside their tab once again.
+- The stack counter is now vertically centered inside the tab.
+
 ## v1.0.4 (2023-10-14)
 
 ### Fixes
