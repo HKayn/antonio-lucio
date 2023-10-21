@@ -22,10 +22,10 @@
   }
 
   @include utilities.mixin-bind-command-chain-flag(
-    "bookmark-bar-over-tab-bar",
+    "bookmarkbar-over-tabbar",
     true
   ) {
-    @include styles.layout-bookmark-bar-over-tab-bar;
+    @include styles.layout-bookmarkbar-over-tabbar;
   }
   
   @include utilities.mixin-bind-command-chain-flag(
