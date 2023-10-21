@@ -13,6 +13,8 @@
 
   .vivaldi {
     transform-origin: top left;
+    height: utilities.$value-of-address-bar-height;
+    margin: 0;
   }
 
   .window-buttongroup {
