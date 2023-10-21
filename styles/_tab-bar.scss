@@ -22,9 +22,10 @@
         .title {
           margin-right: 21px;
           text-align: center;
-          display: inline-flex;
-          vertical-align: bottom;
+          display: inline;
           margin-top: 3px;
+          height: min-content;
+          line-height: unset;
         }
       }
     }
